@@ -16,7 +16,18 @@ export const Task = ({ task }) => {
 
   return (
     <div>
-      {isModalOpen && <Modal onClose={toggleModal}>modal</Modal>}
+      {isModalOpen && (
+        <Modal onClose={toggleModal}>
+          <p>Task: {task.id}</p>
+          <h3>{task.title}</h3>
+          <p>{task.description}</p>
+          <input
+            type="checkbox"
+            checked={task.completed}
+            onChange={handleToggle}
+          />
+        </Modal>
+      )}
 
       <p onClick={toggleModal}>
         Task: {task.id}, Title: {task.title}
