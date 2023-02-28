@@ -1,16 +1,34 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const tasksInitialState = [
-  { id: 0, title: 'html', description: 'Learn HTML and CSS', completed: true },
   {
     id: 1,
-    title: 'js',
-    description: 'Get good at JavaScript',
+    title: 'redux provider',
+    description:
+      ' Для того щоб будь-який компонент у додатку міг використовувати стор, обертаємо Provider все дерево компонентів.',
     completed: true,
   },
-  { id: 2, title: 'react', description: 'Master React', completed: false },
-  { id: 3, title: 'redux', description: 'Discover Redux', completed: false },
-  { id: 4, title: 'app', description: 'Build amazing apps', completed: false },
+  {
+    id: 2,
+    title: 'configureStore',
+    description:
+      'Також функція configureStore() може автоматично створити кореневий редюсер. ',
+    completed: true,
+  },
+  {
+    id: 3,
+    title: 'redux dev tools',
+    description:
+      'Інструменти розробника це розширення браузера, яке додає зручний візуальний інтерфейс для налагодження змін стану програми та стеження за потоком даних у Redux, від відправлення дій до зміни стану.',
+    completed: false,
+  },
+  {
+    id: 4,
+    title: 'devToolsEnhancer',
+    description:
+      ' Імпортуємо функцію devToolsEnhancer і використовуємо її при створенні стора, передавши її результат третім аргументом, замість початкового стану.',
+    completed: false,
+  },
 ];
 
 export const tasksSlice = createSlice({
