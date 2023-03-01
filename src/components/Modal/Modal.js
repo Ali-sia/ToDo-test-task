@@ -1,6 +1,5 @@
 import ReactDOM from 'react-dom';
 
-import { useEffect } from 'react';
 import css from './Modal.module.css';
 
 export const Modal = ({ children, onClose }) => {
