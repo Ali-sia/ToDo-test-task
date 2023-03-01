@@ -8,3 +8,23 @@
 .empty_field + input:focus {
   border-color: red;
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  max-width: 400px;
+  margin-bottom: 20px;
+}
+
+.submit {
+  max-width: 100px;
+  padding: 5px 10px;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 15px;
+}

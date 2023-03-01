@@ -1,7 +1,4 @@
-// const appRoot = document.getElementById('app-root');
-// const modalRoot = document.getElementById('root');
 import ReactDOM from 'react-dom';
-// import React, { useState } from 'react';
 
 import { useEffect } from 'react';
 import css from './Modal.module.css';

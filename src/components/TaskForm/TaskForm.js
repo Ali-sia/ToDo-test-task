@@ -45,8 +45,8 @@ export const TaskForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
+    <form className={css.form} onSubmit={handleSubmit}>
+      <label className={css.label}>
         <p>Title task</p>
         {!isValidTitle && (
           <span className={css.empty_field}>This field is empty</span>
@@ -59,7 +59,7 @@ export const TaskForm = () => {
           onChange={handleChangeTitle}
         />
       </label>
-      <label>
+      <label className={css.label}>
         <p>Description task</p>
         {!isValidDescription && (
           <span className={css.empty_field}>This field is empty</span>
@@ -72,7 +72,9 @@ export const TaskForm = () => {
           onChange={handleChangeDescription}
         />
       </label>
-      <button type="submit">Add task</button>
+      <button className={css.submit} type="submit">
+        Add task
+      </button>
     </form>
   );
 };
