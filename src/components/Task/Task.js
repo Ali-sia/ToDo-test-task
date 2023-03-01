@@ -20,6 +20,9 @@ export const Task = ({ task }) => {
       <th className={css.line_limit_length}>{task.title}</th>
       <th className={css.line_limit_length} onClick={toggleModal}>
         {task.description}
+        {/* <button type="button" onClick={toggleModal}>
+          more
+        </button> */}
         {isModalOpen && (
           <Modal onClose={toggleModal}>
             <p>

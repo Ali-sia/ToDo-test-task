@@ -1,5 +1,7 @@
 // const appRoot = document.getElementById('app-root');
 // const modalRoot = document.getElementById('root');
+import ReactDOM from 'react-dom';
+// import React, { useState } from 'react';
 
 import { useEffect } from 'react';
 import css from './Modal.module.css';
@@ -25,17 +27,16 @@ export const Modal = ({ children, onClose }) => {
     }
   };
 
-  return (
+  return ReactDOM.createPortal(
     <>
       <div className={css.backdrop} />
       <div className={css.modal} onClick={handleBackdropClick}>
         <button type="button" onClick={onClose}>
-          close
+          Close
         </button>
-        modal window info
         <div>{children}</div>
       </div>
-      {/* </div> */}
-    </>
+    </>,
+    document.getElementById('modal-root')
   );
 };
