@@ -19,6 +19,7 @@ export const Modal = ({ children, onClose }) => {
   }, [onClose]);
 
   const handleBackdropClick = event => {
+    event.preventDefault();
     if (event.target === event.currentTarget) {
       onClose();
     }
@@ -26,8 +27,8 @@ export const Modal = ({ children, onClose }) => {
 
   return ReactDOM.createPortal(
     <>
-      <div className={css.backdrop} />
-      <div className={css.modal} onClick={handleBackdropClick}>
+      <div className={css.backdrop} onClick={handleBackdropClick} />
+      <div className={css.modal} onClick={e => e.stopPropagation()}>
         <button type="button" onClick={onClose}>
           Close
         </button>
