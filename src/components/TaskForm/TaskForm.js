@@ -73,7 +73,7 @@ export const TaskForm = () => {
         />
       </label>
       <button className={css.submit} type="submit">
-        Add task
+        Create
       </button>
     </form>
   );

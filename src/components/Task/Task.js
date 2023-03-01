@@ -22,11 +22,10 @@ export const Task = ({ task }) => {
         {task.description}
         {isModalOpen && (
           <Modal onClose={toggleModal}>
-            <p>
-              <b>Task:</b> {task.id}
-            </p>
             <h3>{task.title}</h3>
+            <p>Description:</p>
             <p>{task.description}</p>
+            <span>Status:</span>
             <input
               type="checkbox"
               checked={task.completed}

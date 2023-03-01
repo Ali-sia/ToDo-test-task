@@ -29,10 +29,10 @@ export const Modal = ({ children, onClose }) => {
     <>
       <div className={css.backdrop} onClick={handleBackdropClick} />
       <div className={css.modal} onClick={e => e.stopPropagation()}>
+        <div>{children}</div>
         <button type="button" onClick={onClose}>
           Close
         </button>
-        <div>{children}</div>
       </div>
     </>,
     document.getElementById('modal-root')
