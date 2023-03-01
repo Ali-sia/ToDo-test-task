@@ -7,12 +7,29 @@ export const TaskList = () => {
   const tasks = useSelector(getTasks);
 
   return (
-    <ul>
-      {tasks.map(task => (
-        <li key={task.id}>
-          <Task task={task} />
-        </li>
-      ))}
-    </ul>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>TITLE</th>
+          <th>DESCRIPTION</th>
+          <th>STATUS</th>
+        </tr>
+      </thead>
+      <tbody>
+        {tasks.map(task => (
+          <tr key={task.id}>
+            <Task task={task} />
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    // <ul>
+    //   {tasks.map(task => (
+    //     <li key={task.id}>
+    //       <Task task={task} />
+    //     </li>
+    //   ))}
+    // </ul>
   );
 };
