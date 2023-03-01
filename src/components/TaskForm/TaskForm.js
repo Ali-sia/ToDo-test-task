@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { addTask } from '../../redux/slice';
 import { getTasks } from '../../redux/selectors';
-// import css from "./TaskForm.module.css";
+import css from './TaskForm.module.css';
 
 import { useState } from 'react';
 
@@ -11,12 +11,24 @@ export const TaskForm = () => {
 
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
+  const [isValidTitle, setIsValidTitle] = useState(true);
+  const [isValidDescription, setIsValidDescription] = useState(true);
 
   const handleChangeTitle = e => setTitle(e.currentTarget.value);
   const handleChangeDescription = e => setDescription(e.currentTarget.value);
 
   const handleSubmit = event => {
     event.preventDefault();
+
+    if (title.trim() === '') {
+      setIsValidTitle(false);
+      return;
+    }
+    if (description.trim() === '') {
+      setIsValidDescription(false);
+      return;
+    }
+
     const id = tasks.length + 1;
 
     const newTask = {
@@ -28,12 +40,17 @@ export const TaskForm = () => {
     dispatch(addTask(newTask));
     setTitle(' ');
     setDescription(' ');
+    setIsValidTitle(true);
+    setIsValidDescription(true);
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        Title task
+        <p>Title task</p>
+        {!isValidTitle && (
+          <span className={css.empty_field}>This field is empty</span>
+        )}
         <input
           type="text"
           name="title"
@@ -43,7 +60,10 @@ export const TaskForm = () => {
         />
       </label>
       <label>
-        Description task
+        <p>Description task</p>
+        {!isValidDescription && (
+          <span className={css.empty_field}>This field is empty</span>
+        )}
         <input
           type="text"
           name="description"
